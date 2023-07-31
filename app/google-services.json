@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "127360135396",
+    "firebase_url": "https://tbank-34074-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "tbank-34074",
+    "storage_bucket": "tbank-34074.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127360135396:android:45d43e6108f01da21efcf1",
+        "android_client_info": {
+          "package_name": "com.talhakara.tbankapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127360135396-gv126bkrnf1a2965g655bij3h1furj5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3v79MEPa03XHm-gGmDyym_GeiZvIrlgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127360135396-gv126bkrnf1a2965g655bij3h1furj5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
