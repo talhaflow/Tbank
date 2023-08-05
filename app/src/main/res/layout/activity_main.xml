@@ -4,16 +4,232 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/loginBackGround"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/ibanTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MAİN ACTİVİTY"
-        android:textSize="34sp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/text_view_arkaplan"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:text="TR"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/alGit_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/alGit_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/buttonarkaplan"
+        android:text="AL"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/satGit_btn"
+        app:layout_constraintEnd_toStartOf="@+id/satGit_btn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/satGit_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="63dp"
+        android:background="@drawable/buttonarkaplan"
+        android:text="SAT"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/alGit_btn" />
+
+    <TextView
+        android:id="@+id/AnaSayfaTlGoster"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/text_view_arkaplan"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:text="TL"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/ibanTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tlIcon"
+        app:layout_constraintTop_toTopOf="@+id/euroIcon" />
+
+    <ImageView
+        android:id="@+id/dolarIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="295dp"
+        android:src="@drawable/dolar_ic_beyaz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/AnaSayfaDolarGosterTV"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/AnaSayfaDolarGosterTV"
+        android:layout_width="0dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/text_view_arkaplan"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:text="Dolar"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/AnaSayfaEuroGoster"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dolarIcon"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/dolarIcon_kur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="6dp"
+        android:src="@drawable/dolar_ic_beyaz"
+        app:layout_constraintEnd_toStartOf="@+id/AnaSayfaDolar_Kur_GosterTV"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/AnaSayfaEuroGoster"
+        android:layout_width="0dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/text_view_arkaplan"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:text="Euro"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/AnaSayfaTlGoster"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/euroIcon"
+        app:layout_constraintTop_toTopOf="@+id/dolarIcon" />
+
+    <ImageView
+        android:id="@+id/tlIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="6dp"
+        android:src="@drawable/tl_ic_beyaz"
+        app:layout_constraintEnd_toStartOf="@+id/AnaSayfaTlGoster"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/AnaSayfaTlGoster" />
+
+
+    <ImageView
+        android:id="@+id/euroIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:src="@drawable/euro_ic_beyaz"
+        app:layout_constraintEnd_toStartOf="@+id/AnaSayfaEuroGoster"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dolarIcon" />
+
+    <TextView
+        android:id="@+id/AnaSayfaDolar_Kur_GosterTV"
+        android:layout_width="0dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="46dp"
+        android:background="@drawable/text_view_arkaplan"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:text="Dolar"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/euroIcon_kur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dolarIcon_kur"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+
+    <TextView
+        android:id="@+id/AnaSayfaEuro_Kur_GosterTV"
+        android:layout_width="0dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/text_view_arkaplan"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:text="Euro"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/euroIcon_kur"
+        app:layout_constraintTop_toTopOf="@+id/euroIcon_kur" />
+
+    <ImageView
+        android:id="@+id/euroIcon_kur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="22dp"
+        android:src="@drawable/euro_ic_beyaz"
+        app:layout_constraintEnd_toStartOf="@+id/AnaSayfaEuro_Kur_Goster"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dolarIcon_kur" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="GÜNCEL KUR"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/dolarIcon_kur"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="15dp"
+        android:text="HESAP DETAYI"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/dolarIcon"
+        app:layout_constraintStart_toStartOf="@+id/AnaSayfaDolarGosterTV" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

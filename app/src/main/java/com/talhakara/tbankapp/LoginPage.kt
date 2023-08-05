@@ -17,6 +17,8 @@ class LoginPage : AppCompatActivity() {
         auth = Firebase.auth
         binding= ActivityLoginPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //kullanıcı varsa çıkış yapma
+        auth.signOut()
 
 
         binding.loginKayitOlButton.setOnClickListener {
@@ -30,24 +32,35 @@ class LoginPage : AppCompatActivity() {
             val kullaniciAdi = binding.girisKullaniciAdiEditText.text.toString()
             val kullaniciSifre = binding.girisSifreEditText.text.toString()
 
-            auth.signInWithEmailAndPassword(kullaniciAdi, kullaniciSifre).addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    // Giriş başarılı, MainActivity'e devam et
-                    val intent = Intent(applicationContext, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    // Giriş başarısız, hata ile ilgilen
-                    Toast.makeText(applicationContext, "Giriş başarısız: ${task.exception?.localizedMessage}", Toast.LENGTH_SHORT).show()
+            if(kullaniciAdi.isEmpty()||kullaniciSifre.isEmpty()){
+                Toast.makeText(this,"kullanıcı adı ve şifre eksik",Toast.LENGTH_LONG).show()
+            }else{
+
+                auth.signInWithEmailAndPassword(kullaniciAdi, kullaniciSifre).addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        // Giriş başarılı, MainActivity'e devam et
+                        val intent = Intent(applicationContext, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        // Giriş başarısız, hata ile ilgilen
+                        Toast.makeText(applicationContext, "Giriş başarısız: ${task.exception?.localizedMessage}", Toast.LENGTH_SHORT).show()
+                    }
+                }.addOnFailureListener { exception ->
+                    // Diğer hataları ele al, varsa
+                    Toast.makeText(applicationContext, exception.localizedMessage, Toast.LENGTH_SHORT).show()
                 }
-            }.addOnFailureListener { exception ->
-                // Diğer hataları ele al, varsa
-                Toast.makeText(applicationContext, exception.localizedMessage, Toast.LENGTH_SHORT).show()
             }
+
+
+
+
 
         }
 
 
 
+
     }
+
 }
